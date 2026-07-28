@@ -1,0 +1,29 @@
+Rider Flow
+1.Rider registers and set current location
+2.Rider selects Destination
+3.System displays available vehicle types with estimated fairs( based on distance + vehicle type)
+4.Rider chooses vehicle type and books
+5.OTP is generated and shown to the rider
+6.Rider shares OTP with driver to start the ride
+
+Driver Flow
+1.Driver register and link to a cab
+2.When a rider books, all nearby driver of selected type are notified
+3.First driver to accept get the booking
+4.Driver enters the otp to start ride
+5.Only driver can end the ride
+
+System Requirements
+Business Rules
+OTP verification require to start the ride(max 3 attempts)
+-Cab availability should be based on
+     -Vehicle type, Distance Threshold
+-Fare calculation depends on:
+     -Base rate per vehicle type
+     -Surge pricing multiplier (based on demand)
+
+ Rider -> id,name, currentLocation
+ Location -> from , to
+ Cab -> id, driverName, location, isAvailable, vehicleType
+ vehicleType -> Sedan, Go, Auto, Bike
+ Booking -> id, Rider, Cab, pickupLocation, destinationLocation, bookingTime, fare, status
